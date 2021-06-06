@@ -1,0 +1,7 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+    <textarea title="tweetContent" name="tweet" class="form-control tweet-box border-primary noresize loading" rows="2"
+        maxlength="164" #tweetContent="ngModel" [(ngModel)]="service.tweetData.tweetContent"></textarea>
+    <div class="d-flex justify-content-end mt-2">
+        <button type="submit" class="btn btn-primary loading" [disabled]="clicked || !service.tweetData.tweetContent">Tweet</button>
+    </div>
+</form>

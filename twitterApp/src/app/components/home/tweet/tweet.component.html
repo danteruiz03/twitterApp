@@ -1,0 +1,29 @@
+<div class="mt-1 tweet-head">What's happening?</div>
+<app-tweet-form></app-tweet-form>
+<div class="row border-bottom mt-1"></div>
+<div *ngFor="let tweet of service.tweetsList" class="row border-bottom p-2 tweet-hover">
+    <div class="col-1"></div>
+    <div class="col-11">
+        <div>
+            <span class="mr-1 font-weight-bold">Dante</span>
+            <span class="mr-1 font-weight-light">@danteruiziii</span>
+            <span class="mr-1 font-weight-light">∙</span>
+            <span>{{calculateTime(tweet.dateCreated)}}</span>
+        </div>
+        <div>{{tweet.tweetContent}}</div>
+        <div class="row">
+            <div class="col-3">
+                <fa-icon [icon]="icons.comment"></fa-icon>
+            </div>
+            <div class="col-3">
+                <fa-icon [icon]="icons.retweet"></fa-icon>                
+            </div>
+            <div class="col-3">
+                <fa-icon [icon]="icons.like"></fa-icon>                
+            </div>
+            <div class="col-3">
+                <fa-icon [icon]="icons.share"></fa-icon>                
+            </div>
+        </div>
+    </div>
+</div>
