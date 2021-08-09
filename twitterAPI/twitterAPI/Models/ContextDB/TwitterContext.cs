@@ -13,6 +13,21 @@ namespace twitterAPI.Models.ContextDB
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasData(new User
+            {
+                UserID = -1,
+                Name = "admin",
+                Password = "admin123",
+                Email = "admin@email.com",
+                DateCreated = DateTime.UtcNow,
+                DateModified = DateTime.UtcNow
+            }
+        );
+        }
+
         public DbSet<Tweet> Twitter { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }

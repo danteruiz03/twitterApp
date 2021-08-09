@@ -22,5 +22,8 @@ namespace twitterAPI.Models
             get => _dateCreated; 
             set => _dateCreated = value.ToLocalTime(); 
         }
+
+        public int UserID { get; set; }
+        public virtual User User { get; set; }
     }
 }
